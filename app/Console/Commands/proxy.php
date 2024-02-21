@@ -27,10 +27,13 @@ class proxy extends Command
      */
     public function handle()
     {
-        $data = readline('Enter the IP address: ');
+        $output = $this->output;
+        $output->write("<fg=blue>Enter the IP address:</> ");
+        $data = readline('');
         $result = DataController::index($data);
+        $output = $this->output;
         foreach ($result as $key => $value) {
-            echo "$key: $value\n";
+            $output->writeln("<fg=green>$key:</> <fg=yellow>$value</>");
         }
     }
 }
