@@ -18,11 +18,10 @@ class DataController extends Controller
         $idType = $data['asn']['type'];
         $data = [
             'ip' => $ip,
-            'sclFraud' => $sclFraud,
-            'iqsFraud' => $iqsFraud,
-            'idCity' => $idCity,
-            'idType' => $idType,
-            'created_at' => date('Y-m-d H:i:s'),
+            'ScamAlytic' => $sclFraud,
+            'IpQuality' => $iqsFraud,
+            'City' => $idCity,
+            'Type' => $idType
         ];
         return $data;
     }

@@ -4,6 +4,7 @@ namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
 use App\Http\Controllers\ScraperController;
+use App\Http\Controllers\DataController;
 
 class proxy extends Command
 {
@@ -27,5 +28,9 @@ class proxy extends Command
     public function handle()
     {
         $data = readline('Enter the IP address: ');
+        $result = DataController::index($data);
+        foreach ($result as $key => $value) {
+            echo "$key: $value\n";
+        }
     }
 }
