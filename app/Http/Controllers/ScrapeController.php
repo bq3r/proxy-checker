@@ -30,6 +30,7 @@ class ScrapeController extends Controller
     public static function ipData($ip)
     {
         $apiKey = env('ipdata');
+        
 
     }
 }

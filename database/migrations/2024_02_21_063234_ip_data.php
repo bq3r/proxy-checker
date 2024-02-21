@@ -15,7 +15,6 @@ return new class extends Migration
             $table->id();
             $table->string('ip')->unique();
             $table->integer('iqsfraud');
-            $table->integer('idfraud');
             $table->integer('sclfraud');
             $table->string('idcity');
             $table->string('idtype');
