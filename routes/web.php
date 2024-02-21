@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ScrapeController;
+use App\Http\Controllers\ScraperController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,5 +14,5 @@ use App\Http\Controllers\ScrapeController;
 */
 
 Route::get('/get/{ip}', function ($ip) {
-    return ScrapeController::scamAlytics($ip);
+    return ScraperController::scamAlytics($ip);
 });

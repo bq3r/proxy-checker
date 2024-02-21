@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Str;
 
-class ScrapeController extends Controller
+class ScraperController extends Controller
 {
     public static function scamAlytics($ip)
     {
@@ -30,7 +30,9 @@ class ScrapeController extends Controller
     public static function ipData($ip)
     {
         $apiKey = env('ipdata');
-        
-
+        $url = "https://api.ipdata.co/$ip?api-key=$apiKey";
+        $data = Http::get($url);
+        $json = json_decode($data, true);
+        return $json;
     }
 }
