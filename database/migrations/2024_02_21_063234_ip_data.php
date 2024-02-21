@@ -11,15 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('ip-score', function (Blueprint $table) {
+        Schema::create('ip_data', function (Blueprint $table) {
             $table->id();
             $table->string('ip')->unique();
-            $table->integer('iqs-fraud');
-            $table->integer('is-fraud');
-            $table->integer('sal-fraud');
-            $table->string('is-city');
-            $table->string('is-type');
-            $table->$table->timestamps();
+            $table->integer('iqsfraud');
+            $table->integer('idfraud');
+            $table->integer('sclfraud');
+            $table->string('idcity');
+            $table->string('idtype');
+            $table->timestamps();
         });
     }
 
@@ -28,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('ip-score');
+        Schema::dropIfExists('ip_data');
     }
 };
