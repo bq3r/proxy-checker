@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\ScraperController;
-use Illuminate\Support\Facades\DB;
 
 class DataController extends Controller
 {
@@ -17,6 +16,14 @@ class DataController extends Controller
         $data = ScraperController::ipData($ip);
         $idCity = $data['city'];
         $idType = $data['asn']['type'];
- 
-}
+        $data = [
+            'ip' => $ip,
+            'sclFraud' => $sclFraud,
+            'iqsFraud' => $iqsFraud,
+            'idCity' => $idCity,
+            'idType' => $idType,
+            'created_at' => date('Y-m-d H:i:s'),
+        ];
+        return $data;
+    }
 }
